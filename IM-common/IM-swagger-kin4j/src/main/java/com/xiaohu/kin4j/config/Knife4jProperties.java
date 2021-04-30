@@ -17,19 +17,19 @@ import java.util.List;
 
 @Component
 @ConfigurationProperties("kni4j")
-public class Kin4jProperties {
+public class Knife4jProperties {
 
-    private String title;
+    private String title = "";
 
-    private String description;
+    private String description = "";
 
-    private String version;
+    private String version = "";
 
     private Contact contact = new Contact();
 
-    private String license;
+    private String license = "";
 
-    private String licenseUrl;
+    private String licenseUrl = "";
 
     /**
      * swagger会解析的url规则

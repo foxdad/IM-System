@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.xiaohu.kin4j.config.Kin4jConfig
+  com.xiaohu.kin4j.config.Kin4jAutoConfiguration

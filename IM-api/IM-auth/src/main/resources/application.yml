@@ -30,3 +30,16 @@ spring:
       stat-view-servlet.enabled: true #是否启用StatViewServlet（监控页面）默认值为false
       stat-view-servlet.login-username: admin #设置访问druid监控页的账号,默认没有
       stat-view-servlet.login-password: admin #设置访问druid监控页的密码,默认没有
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:xml/*.xml
+
+kni4j:
+  title: 用户服务
+  version: 1.0.0
+  license: I And You
+  licenseUrl: www.baidu.com
+  basePackage: com.xiaohu.auth.controller
+
+
