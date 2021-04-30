@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.xiaohu.redis.config.RedisConfig,\
+  com.xiaohu.redis.service.RedisCache
