@@ -29,6 +29,22 @@
             <artifactId>mongodb-driver</artifactId>
             <version>3.12.8</version>
         </dependency>
+        <dependency>
+            <groupId>com.xiaohu</groupId>
+            <artifactId>IM-common-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.xiaohu</groupId>
+            <artifactId>IM-common-redis</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.xiaohu</groupId>
+            <artifactId>IM-swagger-kin4j</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
 
     </dependencies>
 
