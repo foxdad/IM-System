@@ -3,6 +3,7 @@ package com.xiaohu.core.utils;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Date;
@@ -20,12 +21,14 @@ public class JwtUtils {
 
     private static final String CLAIM_KEY_USERNAME = "sub";
 
+    private static final String CLAIM_KEY_ID = "id";
+
     private static final String CLAIM_KEY_CREATED = "created";
 
-    @Value("${jwt.secret}")
+    @Value("${jwt.secret:xiaokexian20010813}")
     private String secret;
 
-    @Value("${jwt.expiration}")
+    @Value("${jwt.expiration:86400}")
     private Long expiration;
 
 
@@ -102,21 +105,37 @@ public class JwtUtils {
 
     public String getUserNameFromToken(String token) {
 
-        String usernameAndId;
+        String userNameAndId;
 
         try {
 
             Claims claims = getClaimsFromToken(token);
 
-            usernameAndId =  claims.getSubject();
+
+            userNameAndId =  claims.getSubject();
 
         } catch (Exception e) {
 
-            usernameAndId = null;
+            userNameAndId = null;
 
         }
 
-        return usernameAndId;
+        return userNameAndId;
+
+    }
+
+    public Object getIdFromToken(String token) {
+
+        Object id;
+
+        try {
+            Claims claims = getClaimsFromToken(token);
+            id =  claims.get(CLAIM_KEY_ID);
+
+        } catch (Exception e) {
+            id = null;
+        }
+        return id;
 
     }
 
@@ -182,7 +201,9 @@ public class JwtUtils {
 
         Map<String, Object> claims = new HashMap<>();
 
-        claims.put(CLAIM_KEY_USERNAME, id+""+userName);
+        claims.put(CLAIM_KEY_USERNAME, userName);
+
+        claims.put(CLAIM_KEY_ID,id);
 
         claims.put(CLAIM_KEY_CREATED, new Date());
 

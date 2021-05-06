@@ -35,6 +35,10 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath:xml/*.xml
 
+jwt:
+  secret: XiaoKeXianAndTengTeng2001
+  expiration: 86400
+
 kni4j:
   title: 用户服务
   version: 1.0.0
